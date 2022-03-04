@@ -1,8 +1,10 @@
 fun main() {
-    val amount = 1000000
-    val basicCommission = 0.0075  //percentage
-    val minimalCommission = 3500  //value
+    val amount = 1_000_000
+    val commissionPercentage = 0.75
+    val commissionValue = amount / 100 * commissionPercentage
+    val minimalCommission = 3500
 
-    val realCommission = if (minimalCommission >= amount * basicCommission) minimalCommission else amount * basicCommission
+    val realCommission = if (minimalCommission >= commissionValue) minimalCommission else commissionValue
     println("Комиссия составит : ${realCommission.toInt()} копеек")
+
 }
